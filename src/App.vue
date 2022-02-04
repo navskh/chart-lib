@@ -1,28 +1,38 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1>chart.js</h1>
+    <bar-chart></bar-chart>
+    <line-chart></line-chart>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import LineChart from "./components/LineChart.vue";
+import BarChart from "./components/BarChart.vue";
 
 export default {
-  name: 'App',
+  // 컴포넌트 속성 && 인스턴스 옵션
   components: {
-    HelloWorld
-  }
-}
+    BarChart,
+    LineChart,
+  },
+  data() {
+    return {
+      chartDataSet: [],
+    };
+  },
+  methods: {
+    getChartData() {
+      setTimeout(() => {});
+    },
+  },
+  created() {
+    // axios
+    //   .get("charts/line/1")
+    //   .then((response) => response.data)
+    //   .catch((err) => console.log(err));
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
